@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+</head>
+<body>
+    <h1>Quote of the Day</h1>
+    <p id="quote"></p>
+    
+    <h2>Favorite Websites</h2>
+    <ul id="websites"></ul>
+    
+    <script>
+        // Array of 5 quotes
+        const quotes = [
+            "Believe you can and you're halfway there.",
+            "Act as if what you do makes a difference. It does.",
+            "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+            "Keep your face always toward the sunshine—and shadows will fall behind you.",
+            "What lies behind us and what lies before us are tiny matters compared to what lies within us."
+        ];
+        
+        // Prompt user for a number
+        let userNumber = parseInt(prompt("Enter a number:"));
+        
+        // Calculate modulus and select quote
+        let index = userNumber % quotes.length;
+        document.getElementById("quote").textContent = quotes[index];
+        
+        // Array of favorite websites
+        let websites = [
+            "https://www.google.com",
+            "https://www.wikipedia.org",
+            "https://www.github.com"
+        ];
+        
+        // Display initial websites
+        function displayWebsites() {
+            let websiteList = document.getElementById("websites");
+            websiteList.innerHTML = ""; // Clear list
+            websites.forEach(url => {
+                let li = document.createElement("li");
+                let a = document.createElement("a");
+                a.href = url;
+                a.textContent = url;
+                a.target = "_blank";
+                li.appendChild(a);
+                websiteList.appendChild(li);
+            });
+        }
+        
+        displayWebsites();
+        
+        // Prompt user for favorite website
+        let newWebsite = prompt("Enter your favorite website URL:");
+        if (newWebsite) {
+            websites.push(newWebsite); // Add to the end of the array
+            websites.shift(); // Remove first website
+        }
+        
+        // Display updated websites
+        displayWebsites();
+    </script>
+</body>
+</html>
