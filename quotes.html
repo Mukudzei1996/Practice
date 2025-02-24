@@ -22,7 +22,7 @@
         ];
         
         // Prompt user for a number
-        var userNumber = parseInt(prompt("Enter a number:"));
+        var userNumber = Int(prompt("Enter a number:"));
         
         // Calculate modulus and select quote
         var index = userNumber % quotes.length;
@@ -35,7 +35,7 @@
             "https://www.facebook.com"
         ];
         
-        // Display initial websites
+        // Display websites
         function displayWebsites() {
             let websiteList = document.getElementById("websites");
             websiteList.innerHTML = ""; // Clear list
@@ -53,7 +53,7 @@
         displayWebsites();
         
         // Prompt user for favorite website
-        var newWebsite = prompt("Enter your favorite website URL:");
+        var newWebsite = prompt("Please enter your favorite website:");
         if (newWebsite) {
             websites.push(newWebsite); // Add to the end of the array
             websites.shift(); // Remove first website
