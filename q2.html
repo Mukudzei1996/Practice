@@ -29,16 +29,38 @@
     document.write(remainder);
 
     //WEBSITE
-    var favoriteWebsites = [
+    let websites = [
     "https://www.google.com",
-    "https://www.wikipedia.org",
-    "https://www.github.com"
+    "https://www.youtube.com",
+    "https://www.facebook.com"
     ];
-    document.write(favoriteWebsites)
-    var newWebsite = prompt("Please enter your favourite website: ");
 
-    favoriteWebsites.push("newWebsite");
-    favoriteWebsites.shift()
+    // Display initial websites
+    function displayWebsites() {
+    let websiteList = document.getElementById("websites");
+    websiteList.innerHTML = ""; // Clear list
+    websites.forEach(url => {
+    let li = document.createElement("li");
+    let a = document.createElement("a");
+    a.href = url;
+    a.textContent = url;
+    a.target = "_blank";
+    li.appendChild(a);
+    websiteList.appendChild(li);
+    });
+    }
+
+    displayWebsites();
+
+    // Prompt user for favorite website
+    let newWebsite = prompt("Enter your favorite website URL:");
+    if (newWebsite) {
+    websites.push(newWebsite); // Add to the end of the array
+    websites.shift(); // Remove first website
+    }
+
+    // Display updated websites
+    displayWebsites(); 
 </script>
 </body>
 </html>
