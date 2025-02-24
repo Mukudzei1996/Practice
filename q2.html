@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+</head>
+<body>
+    <h1>Quote of the Day</h1>
+    <p id="quote"></p>
+    
+    <h2>Favorite Websites</h2>
+    <ul id="websites"></ul>
+
+<script>
+    //QUOTES
+    var quotes = ["The best way to predict the future is to invent it.", 
+        "Life is 10% what happens to us and 90% how we react to it.",
+        "Do what you can, with what you have, where you are.",
+        "Success is not final, failure is not fatal: it is the courage to continue that counts.", 
+         "Happiness depends upon ourselves."];
+
+    var number = prompt("Please enter your number: ");
+
+    var index = number % 5;
+
+    var remainder = quotes[index];
+
+    document.write(remainder);
+
+    //WEBSITE
+    var favoriteWebsites = [
+    "https://www.google.com",
+    "https://www.wikipedia.org",
+    "https://www.github.com"
+    ];
+    document.write(favoriteWebsites)
+    var newWebsite = prompt("Please enter your favourite website: ");
+
+    favoriteWebsites.push("newWebsite");
+    favoriteWebsites.shift()
+</script>
+</body>
+</html>
