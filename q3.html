@@ -13,7 +13,7 @@
     <ul id="websites"></ul>
     <script>
         // Array of 5 quotes
-        var quotes = [
+        const quotes = [
             "Believe you can and you're halfway there.",
             "Act as if what you do makes a difference. It does.",
             "Success is not final, failure is not fatal: it is the courage to continue that counts.",
@@ -22,14 +22,14 @@
         ];
         
         // Prompt user for a number
-        var userNumber = parseInt(prompt("Enter a number:"));
+        let userNumber = parseInt(prompt("Enter a number:"));
         
         // Calculate modulus and select quote
-        var index = userNumber % quotes.length;
+        let index = userNumber % quotes.length;
         document.getElementById("quote").textContent = quotes[index];
         
         // Array of favorite websites
-        var websites = [
+        let websites = [
             "https://www.google.com",
             "https://www.youtube.com",
             "https://www.facebook.com"
@@ -53,7 +53,7 @@
         displayWebsites();
         
         // Prompt user for favorite website
-        var newWebsite = prompt("Enter your favorite website URL:");
+        let newWebsite = prompt("Enter your favorite website URL:");
         if (newWebsite) {
             websites.push(newWebsite); // Add to the end of the array
             websites.shift(); // Remove first website
