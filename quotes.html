@@ -14,18 +14,18 @@
     <script>
         // Array of 5 quotes
         var quotes = [
-            "Believe you can and you're halfway there.",
-            "Act as if what you do makes a difference. It does.",
-            "Success is not final, failure is not fatal: it is the courage to continue that counts.",
-            "Keep your face always toward the sunshine—and shadows will fall behind you.",
-            "What lies behind us and what lies before us are tiny matters compared to what lies within us."
+            "If you want to live a happy life, tie it to a goal, not to people or things.",
+            "Money and success do not change people; they merely amplify what is already there.",
+            "Many of life failures are people who did not realize how close they were to success when they gave up.",
+            "Not how long, but how well you have lived is the main thing.",
+            "In order to write about life first you must live it."
         ];
         
         // Prompt user for a number
         var userNumber = Int(prompt("Enter a number:"));
         
         // Calculate modulus and select quote
-        var index = userNumber % quotes.length;
+        var index = userNumber % quotes;
         document.getElementById("quote").textContent = quotes[index];
         
         // Array of favorite websites
