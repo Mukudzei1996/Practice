@@ -3,65 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quote of the Day</title>
+    <title>Secret Number Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+   
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #333;
+            font-style: bold;
+
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Quote of the Day</h1>
-    <p id="quotes"></p>
+    <h1>Number Game</h1>
     
-    <h2>Favorite Websites</h2>
-    <ul id="websites"></ul>
+    <script>
+        var secret_number = 10      // Predefined secret number the user needs to guess
+        var guess = parseInt(prompt("Please enter your favourite number:"));
+       
+        // Loop to ensure the user enters a valid number before proceeding
+        while(isNaN(guess)){
+	    guess = prompt("That's not a number! What's your favorite number?");
+	    guess = parseInt(guess);
+        }
+        
+        // Checks to ensure the user guessed the correct number and display the game results to the user
+        if (secret_number == guess)
+            document.write ("Congratulations! You guessed the secret number. You earned 10 points! ")
+        else 
+            document.write ("Sorry, that was incorrect. You earned 0 points" )
+    </script>
 
-<script>
-    //QUOTES
-    var quotes = ["The best way to predict the future is to invent it.", 
-        "Life is 10% what happens to us and 90% how we react to it.",
-        "Do what you can, with what you have, where you are.",
-        "Success is not final, failure is not fatal: it is the courage to continue that counts.", 
-         "Happiness depends upon ourselves."];
-
-    var number = prompt("Please enter your number: ");
-
-    var index = number % 5;
-
-    var remainder = quotes[index];
-
-    document.write(remainder);
-
-
-    //WEBSITE
-    let websites = [
-    "https://www.google.com",
-    "https://www.youtube.com",
-    "https://www.facebook.com"
-    ];
-
-    // Display initial websites
-    function displayWebsites() {
-    let websiteList = document.getElementById("websites");
-    websiteList.innerHTML = ""; // Clear list
-    websites.forEach(url => {
-    let li = document.createElement("li");
-    let a = document.createElement("a");
-    a.href = url;
-    a.textContent = url;
-    a.target = "_blank";
-    li.appendChild(a);
-    websiteList.appendChild(li);
-    });
-    }
-
-    displayWebsites();
-
-    // Prompt user for favorite website
-    let newWebsite = prompt("Enter your favorite website URL:");
-    if (newWebsite) {
-    websites.push(newWebsite); // Add to the end of the array
-    websites.shift(); // Remove first website
-    }
-
-    // Display updated websites
-    displayWebsites(); 
-</script>
+    <h2>Game Over</h2>
 </body>
 </html>
